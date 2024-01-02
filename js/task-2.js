@@ -32,7 +32,7 @@ const images = [
 
 
 
-const list = document.querySelector('.gallery')
+const list = document.querySelector('.gallery');
 
 function image(img) {
   return `<li> <img src= ${img.url} alt=${img.alt}> </li>`;
@@ -41,7 +41,7 @@ function image(img) {
 
 function listImages() {
   const markup = images.map(image).join('');
-  list.insertAdjacentHTML('beforeend', markup)
+  list.insertAdjacentHTML('beforeend', markup);
 }
 
-listImages()
+listImages();

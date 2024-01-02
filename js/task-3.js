@@ -6,6 +6,6 @@ const eventListener = textInput.addEventListener('input', sayHello);
 function sayHello() {
     
     const trimmedValue = textInput.value.trim();
-    textOutput.textContent = trimmedValue || 'Anonymous'
+    textOutput.textContent = trimmedValue || 'Anonymous';
 
 }
