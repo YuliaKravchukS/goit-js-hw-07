@@ -4,39 +4,44 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const btnCreate = document.querySelector('button[data-create]');
-const btnDestroy = document.querySelector('button[data-destroy]');
-const textInput = document.querySelector('#controls input')
-const boxes = document.querySelector('#boxes')
+const btnCreate = document.querySelector('[data-create]');
+const btnDestroy = document.querySelector('[data-destroy]');
+const textInput = document.querySelector('input')
+const boxesCotnainer = document.querySelector('#boxes')
 
 
 btnCreate.addEventListener('click', createBoxes);
 btnDestroy.addEventListener('click', destroyBoxes)
 
 
-console.log(textInput.value);
-const amount = 3;
+
+
 const min = textInput.getAttribute('min');
 const max = textInput.getAttribute('max');
-console.log(amount, min, max);
 
-function createBoxes(amount) {
-  const arr = [];
-  let count = 0;
-    for (let i = 0; i < amount; i++) {
+
+function createBoxes() {
+  const amount = parseInt(textInput.value);
+  
       if (amount >= min && amount <= max) {
-        const markupBox = '<div class = box></div>';
-        arr.push(markupBox);
+      const boxes = Array.from({ length: amount }, (_, index) => createBox(index));
+      boxesCotnainer.append(...boxes);
+      textInput.value = '';
       }
-  }
-  return arr
+  
+  
 }
 
+  function createBox(index) {
+    const box = document.createElement('div');
+    box.style.width = `${30 + index * 10}px`;
+    box.style.height = `${30 + index * 10}px`;
+    box.style.backgroundColor = getRandomHexColor();
+    return box;
+  }
 
-
-console.log(createBoxes());
 
 function destroyBoxes() {
-
+return boxes.innerHTML = '';
 }
 
