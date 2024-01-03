@@ -79,7 +79,7 @@ body {
   height: 300px;
 }
 
-#name-input {
+input {
   width: 360px;
   height: 40px;
 
@@ -101,8 +101,8 @@ h1 {
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
-  line-height: 32px; /* 133.333% */
-  letter-spacing: 0.96px;
+  line-height: 1, 33;
+  letter-spacing: 0.04em;
 }
 
 .login-form {
@@ -110,15 +110,120 @@ h1 {
   padding: 24px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  width: 408px;
 }
 
 label {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
   color: #2e2f42;
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 150% */
-  letter-spacing: 0.64px;
+  letter-spacing: 0.04em;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.login-form label > input {
+  margin-bottom: 0;
+}
+
+button {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+
+  border-radius: 8px;
+  background: #4e75ff;
+
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: none;
+}
+
+.login-form button {
+  width: 86px;
+
+  margin-top: 8px;
+}
+
+button:hover,
+button:focus {
+  background: #6c8cff;
+}
+
+.widget {
+  padding: 100px 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  border-radius: 8px;
+  background: #fff;
+  color: #2e2f42;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.change-color {
+  width: 148px;
+}
+
+#controls {
+  display: flex;
+  padding: 32px;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+#controls input {
+  border-radius: 8px;
+  display: flex;
+  padding: 8px 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  color: #2e2f42;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+#controls button {
+  width: 120px;
+}
+
+#controls button:last-child {
+  background: #ff4e4e;
+}
+#controls button:last-child:hover,
+#controls button:last-child:focus {
+  background: #ff7070;
+}
+
+#boxes {
+  display: flex;
+  padding: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
 }
